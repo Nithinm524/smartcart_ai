@@ -1,0 +1,157 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "UserPreference": {
+      "title": "UserPreference",
+      "description": "User shopping preferences",
+      "type": "object",
+      "properties": {
+        "currency": { "type": "string" },
+        "defaultBudget": { "type": "number" },
+        "preferredCategories": { "type": "array" },
+        "preferredBrands": { "type": "array" },
+        "shoppingStyle": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["currency", "defaultBudget", "shoppingStyle"]
+    },
+    "CartItem": {
+      "title": "CartItem",
+      "description": "Item in user shopping cart",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "title": { "type": "string" },
+        "price": { "type": "number" },
+        "quantity": { "type": "number" },
+        "image": { "type": "string" },
+        "category": { "type": "string" },
+        "brand": { "type": "string" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "title", "price", "quantity"]
+    },
+    "SavedItem": {
+      "title": "SavedItem",
+      "description": "Product saved for later",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "title": { "type": "string" },
+        "price": { "type": "number" },
+        "image": { "type": "string" },
+        "category": { "type": "string" },
+        "brand": { "type": "string" },
+        "rating": { "type": "number" },
+        "savedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "title", "price"]
+    },
+    "ShoppingList": {
+      "title": "ShoppingList",
+      "description": "Curated shopping list",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "items": { "type": "array" },
+        "estimatedTotal": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "estimatedTotal"]
+    },
+    "HistoryItem": {
+      "title": "HistoryItem",
+      "description": "AI recommendation & shopping search session history",
+      "type": "object",
+      "properties": {
+        "query": { "type": "string" },
+        "summary": { "type": "string" },
+        "productsSelected": { "type": "array" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["query", "summary"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Catalog product",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "brand": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "rating": { "type": "number" },
+        "reviewsCount": { "type": "number" },
+        "image": { "type": "string" },
+        "description": { "type": "string" },
+        "specs": { "type": "object" },
+        "matchScore": { "type": "number" },
+        "featured": { "type": "boolean" }
+      },
+      "required": ["id", "title", "brand", "category", "price"]
+    },
+    "Conversation": {
+      "title": "Conversation",
+      "description": "User AI conversation session with SmartCart copilot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "messages": { "type": "array" },
+        "lastMessage": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "messages"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile data"
+    },
+    "/users/{uid}/preferences/{preferenceId}": {
+      "schema": "UserPreference",
+      "description": "Stores individual user shopping preferences"
+    },
+    "/users/{uid}/cart/{cartItemId}": {
+      "schema": "CartItem",
+      "description": "Items in user shopping cart"
+    },
+    "/users/{uid}/saved/{savedItemId}": {
+      "schema": "SavedItem",
+      "description": "User saved/wishlist products"
+    },
+    "/users/{uid}/lists/{listId}": {
+      "schema": "ShoppingList",
+      "description": "User created shopping lists"
+    },
+    "/users/{uid}/history/{historyId}": {
+      "schema": "HistoryItem",
+      "description": "User AI shopping search history"
+    },
+    "/users/{uid}/conversations/{conversationId}": {
+      "schema": "Conversation",
+      "description": "User AI conversation history with SmartCart copilot"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Catalog products accessible for discovery"
+    }
+  }
+}

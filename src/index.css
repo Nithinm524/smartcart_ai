@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #F9F8F5;
+  --card: #FFFFFF;
+  --surface-muted: #F4F2EC;
+  --ink: #18181B;
+  --ink-muted: #57534E;
+  --ink-faint: #A8A29E;
+  --primary: #1D4ED8;
+  --primary-hover: #1E40AF;
+  --primary-light: #EFF6FF;
+  --border: rgba(24, 24, 27, 0.08);
+  --border-strong: rgba(24, 24, 27, 0.14);
+  --success: #059669;
+  --warning: #D97706;
+  --danger: #DC2626;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Premium Card & Panel Utility Styles */
+.premium-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(24, 24, 27, 0.03), 0 8px 24px -6px rgba(24, 24, 27, 0.04);
+  border-radius: 20px;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.premium-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 12px rgba(24, 24, 27, 0.04), 0 16px 32px -8px rgba(24, 24, 27, 0.06);
+}
+
+.premium-panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(24, 24, 27, 0.03);
+  border-radius: 20px;
+}
+
+/* Backward compatibility aliases mapping to the refined card/panel styles */
+.glass-panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(24, 24, 27, 0.03), 0 10px 28px -8px rgba(24, 24, 27, 0.04);
+  border-radius: 20px;
+}
+
+.glass-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(24, 24, 27, 0.03), 0 8px 20px -6px rgba(24, 24, 27, 0.04);
+  border-radius: 20px;
+  transition: all 180ms ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 12px rgba(24, 24, 27, 0.04), 0 16px 32px -8px rgba(24, 24, 27, 0.07);
+}
+
+/* Brand Accent Treatment (Solid confident charcoal/blue system) */
+.brand-badge {
+  background-color: #18181B;
+  color: #FFFFFF;
+}
+
+.ai-gradient {
+  background-color: #18181B;
+  color: #FFFFFF;
+}
+
+/* Typography Scales */
+.clamp-hero {
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+
+.clamp-h2 {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+/* Custom Interactive Focus States */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #1D4ED8;
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(24, 24, 27, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(24, 24, 27, 0.22);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

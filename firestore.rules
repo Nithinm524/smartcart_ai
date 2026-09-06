@@ -1,0 +1,94 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default-deny all by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && isValidId(userId) && request.auth.uid == userId;
+    }
+
+    function isOwnerWrite(userId) {
+      return isOwner(userId) &&
+        (!('uid' in request.resource.data) || request.resource.data.uid == userId) &&
+        (!('userId' in request.resource.data) || request.resource.data.userId == userId);
+    }
+
+    // User profile document and strictly isolated private subcollections
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwnerWrite(userId);
+      allow delete: if isOwner(userId);
+
+      // User Preferences subcollection
+      match /preferences/{preferenceId} {
+        allow read: if isOwner(userId) && isValidId(preferenceId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(preferenceId);
+        allow delete: if isOwner(userId) && isValidId(preferenceId);
+      }
+
+      // User Shopping Cart subcollection
+      match /cart/{cartItemId} {
+        allow read: if isOwner(userId) && isValidId(cartItemId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(cartItemId);
+        allow delete: if isOwner(userId) && isValidId(cartItemId);
+      }
+
+      // User Saved Items subcollection
+      match /saved/{savedItemId} {
+        allow read: if isOwner(userId) && isValidId(savedItemId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(savedItemId);
+        allow delete: if isOwner(userId) && isValidId(savedItemId);
+      }
+
+      // User Shopping Lists subcollection
+      match /lists/{listId} {
+        allow read: if isOwner(userId) && isValidId(listId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(listId);
+        allow delete: if isOwner(userId) && isValidId(listId);
+      }
+
+      // User Activity History subcollection
+      match /history/{historyId} {
+        allow read: if isOwner(userId) && isValidId(historyId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(historyId);
+        allow delete: if isOwner(userId) && isValidId(historyId);
+      }
+
+      // User AI Conversations subcollection
+      match /conversations/{conversationId} {
+        allow read: if isOwner(userId) && isValidId(conversationId);
+        allow create, update: if isOwnerWrite(userId) && isValidId(conversationId);
+        allow delete: if isOwner(userId) && isValidId(conversationId);
+      }
+    }
+
+    // Public catalog products (read by all shoppers, write restricted to verified store admin)
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAuthenticated() && 
+                      isValidId(productId) &&
+                      request.auth.token.email == "mnithin570@gmail.com" &&
+                      request.auth.token.email_verified == true;
+    }
+
+    // Test connection doc used strictly by testConnection() read check (write and list forbidden)
+    match /test/connection {
+      allow get: if true;
+      allow list, write: if false;
+    }
+  }
+}
+

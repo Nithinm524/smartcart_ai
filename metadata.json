@@ -1,0 +1,6 @@
+{
+  "name": "SmartCart AI",
+  "description": "An intelligent AI-powered shopping assistant to discover products, compare choices, optimize carts, and stay within budget.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

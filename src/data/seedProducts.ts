@@ -1,0 +1,378 @@
+import { Product } from '../types';
+
+export const SEED_PRODUCTS: Product[] = [
+  {
+    id: 'prod-sony-wh1000xm5',
+    title: 'Sony WH-1000XM5 Wireless Noise Cancelling Headphones',
+    brand: 'Sony',
+    category: 'Audio',
+    price: 29990,
+    originalPrice: 34990,
+    rating: 4.8,
+    reviewsCount: 3840,
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80',
+    description: 'Industry-leading noise canceling with two processors and 8 microphones. Magnificent sound quality engineered to perfection with 30-hour battery life.',
+    specs: {
+      'Battery Life': '30 Hours (ANC On)',
+      'Noise Cancelling': 'Industry Leading Auto NC Optimizer',
+      'Connectivity': 'Bluetooth 5.2, Multipoint, 3.5mm jack',
+      'Weight': '250 grams',
+      'Driver Unit': '30mm Carbon Fiber Composite'
+    },
+    matchScore: 98,
+    featured: true,
+    inStock: true,
+    pros: ['Unmatched active noise cancellation', 'Extremely lightweight and comfortable', 'Crystal-clear microphone array for calls'],
+    considerations: ['Non-folding hinge design requires larger case', 'Can feel warm after 4+ hours of intense continuous wear']
+  },
+  {
+    id: 'prod-keychron-v1',
+    title: 'Keychron V1 Custom Mechanical Keyboard (QMK/VIA)',
+    brand: 'Keychron',
+    category: 'Workspace',
+    price: 7999,
+    originalPrice: 9499,
+    rating: 4.9,
+    reviewsCount: 1420,
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80',
+    description: '75% layout fully customizable mechanical keyboard with screw-in stabilizers, double-shot OSA PBT keycaps, and south-facing RGB backlight.',
+    specs: {
+      'Layout': '75% Compact (81 keys)',
+      'Switches': 'Keychron K Pro Red (Pre-lubed)',
+      'Keycaps': 'OSA Profile Double-shot PBT',
+      'Connectivity': 'USB Type-C Detachable Cable',
+      'Firmware': 'QMK / VIA open-source reprogrammable'
+    },
+    matchScore: 95,
+    featured: true,
+    inStock: true,
+    pros: ['Superb out-of-the-box acoustic dampening', 'Hot-swappable switches with zero soldering', 'Full QMK/VIA keymap customization'],
+    considerations: ['Wired-only connection', 'Solid ABS body rather than aluminum']
+  },
+  {
+    id: 'prod-macbook-air-m3',
+    title: 'Apple MacBook Air 13.6-inch (M3 chip, 16GB RAM, 512GB SSD)',
+    brand: 'Apple',
+    category: 'Laptops',
+    price: 114900,
+    originalPrice: 124900,
+    rating: 4.9,
+    reviewsCount: 2190,
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80',
+    description: 'Strikingly thin and fast with the groundbreaking Apple M3 chip. Delivers up to 18 hours of battery life in an ultraportable silent fanless design.',
+    specs: {
+      'Processor': 'Apple M3 8-core CPU, 10-core GPU',
+      'Memory': '16GB Unified Memory',
+      'Storage': '512GB High-Speed NVMe SSD',
+      'Display': '13.6-inch Liquid Retina (500 nits)',
+      'Battery': 'Up to 18 hours video playback'
+    },
+    matchScore: 96,
+    featured: true,
+    inStock: true,
+    pros: ['Silent fanless operation even under load', 'Class-leading battery efficiency and trackpad', 'Stunning Liquid Retina display'],
+    considerations: ['Port selection limited to 2 Thunderbolt ports and MagSafe', 'Supports max two external displays with lid closed']
+  },
+  {
+    id: 'prod-logitech-mx-master-3s',
+    title: 'Logitech MX Master 3S Performance Wireless Ergonomic Mouse',
+    brand: 'Logitech',
+    category: 'Workspace',
+    price: 8995,
+    originalPrice: 10995,
+    rating: 4.8,
+    reviewsCount: 5200,
+    image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop&q=80',
+    description: 'Iconic ergonomic silhouette with 8K DPI track-on-glass sensor and Quiet Click switches offering 90% less click noise with magnetic MagSpeed scrolling.',
+    specs: {
+      'Sensor': 'Darkfield 8,000 DPI (Tracks on glass)',
+      'Scroll Wheel': 'MagSpeed electromagnetic scrolling (1,000 lines/sec)',
+      'Battery': 'Up to 70 days per charge, 3 min charge for 1 day',
+      'Connectivity': 'Bluetooth Low Energy & Logi Bolt USB'
+    },
+    matchScore: 94,
+    featured: false,
+    inStock: true,
+    pros: ['Remarkable ergonomic contour for wrist comfort', 'MagSpeed flywheel scroll speed is unmatched', 'Virtually silent tactile click action'],
+    considerations: ['Right-handed orientation only', 'Heavier than competitive gaming mice (141g)']
+  },
+  {
+    id: 'prod-dell-ultrasharp-27',
+    title: 'Dell UltraSharp 27-inch 4K USB-C Hub Monitor (U2723QE)',
+    brand: 'Dell',
+    category: 'Displays',
+    price: 48999,
+    originalPrice: 55999,
+    rating: 4.7,
+    reviewsCount: 1100,
+    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80',
+    description: 'IPS Black technology with 2000:1 contrast ratio, 98% DCI-P3 color reproduction, and comprehensive 90W USB-C power delivery with RJ45 Ethernet pass-through.',
+    specs: {
+      'Resolution': '3840 x 2160 (4K UHD) @ 60Hz',
+      'Panel': 'IPS Black Technology with wide viewing angle',
+      'Color Gamut': '100% sRGB, 98% DCI-P3',
+      'Power Delivery': '90W USB-C single cable setup'
+    },
+    matchScore: 91,
+    featured: false,
+    inStock: true,
+    pros: ['IPS Black provides deep inky contrast without OLED burn-in', 'Integrated KVM switch and hub keeps desk neat', 'Factory calibrated color accuracy'],
+    considerations: ['Refresh rate is 60Hz rather than 120Hz', 'Built-in audio speakers are basic']
+  },
+  {
+    id: 'prod-ember-mug-2',
+    title: 'Ember Temperature Control Smart Mug 2 (295ml / 10oz)',
+    brand: 'Ember',
+    category: 'Lifestyle',
+    price: 13999,
+    originalPrice: 15499,
+    rating: 4.6,
+    reviewsCount: 890,
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80',
+    description: 'Keep your hot drink at your exact preferred drinking temperature (50°C - 62.5°C) from the first sip to the last drop with smart app control.',
+    specs: {
+      'Capacity': '295 ml (10 oz)',
+      'Battery Life': '1.5 hours standalone, all day on charging coaster',
+      'Temperature Range': '50°C - 62.5°C (120°F - 145°F)',
+      'Water Resistance': 'IPX7 fully submersible up to 1 meter'
+    },
+    matchScore: 89,
+    featured: false,
+    inStock: true,
+    pros: ['Coffee stays piping hot for hours during deep work sessions', 'Automatic auto-sleep when liquid is empty', 'Elegant matte ceramic finish'],
+    considerations: ['Requires hand washing only (not dishwasher safe)', 'Premium pricing for a beverage container']
+  },
+  {
+    id: 'prod-oneplus-nord-buds-2',
+    title: 'OnePlus Nord Buds 2 Wireless Earbuds with ANC (BassWave Tech)',
+    brand: 'OnePlus',
+    category: 'Audio',
+    price: 2999,
+    originalPrice: 3299,
+    rating: 4.4,
+    reviewsCount: 8400,
+    image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&auto=format&fit=crop&q=80',
+    description: 'Up to 25dB active noise cancellation with 12.4mm titanium dynamic drivers, BassWave enhancement algorithm, and 36-hour total battery life.',
+    specs: {
+      'Noise Cancelling': 'Active Noise Cancellation (25dB)',
+      'Battery Life': '36 Hours total with charging case',
+      'Driver Size': '12.4mm Dynamic Titanized Drivers',
+      'Water Rating': 'IP55 Sweat and Water Resistance'
+    },
+    matchScore: 92,
+    featured: false,
+    inStock: true,
+    pros: ['Incredible sound quality and punchy bass at an accessible price', 'Quick charge: 10 mins gives 5 hours playtime', 'Durable IP55 rating'],
+    considerations: ['ANC reduces low hums but not high chatter', 'No multi-point pairing between dual devices']
+  },
+  {
+    id: 'prod-asus-zephyrus-g14',
+    title: 'ASUS ROG Zephyrus G14 Gaming & Creator Laptop (Ryzen 9, RTX 4060)',
+    brand: 'ASUS',
+    category: 'Laptops',
+    price: 139990,
+    originalPrice: 159990,
+    rating: 4.8,
+    reviewsCount: 760,
+    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&auto=format&fit=crop&q=80',
+    description: 'Ultraportable CNC aluminum powerhouse featuring 3K 120Hz OLED ROG Nebula display, AMD Ryzen 9 8945HS with Ryzen AI, and NVIDIA GeForce RTX 4060.',
+    specs: {
+      'Processor': 'AMD Ryzen 9 8945HS (16MB Cache, up to 5.2GHz)',
+      'Graphics': 'NVIDIA GeForce RTX 4060 8GB GDDR6',
+      'Display': '14-inch 3K (2880 x 1800) OLED 120Hz 0.2ms',
+      'Weight': '1.50 kg (Ultra-sleek 1.59cm thickness)'
+    },
+    matchScore: 94,
+    featured: false,
+    inStock: true,
+    pros: ['Breathtaking 3K OLED 120Hz display with true HDR', 'Extremely compact and lightweight for high GPU power', 'Premium stealth CNC chassis with slash lighting'],
+    considerations: ['Fans can ramp up during heavy AAA game renders', 'Memory is soldered (ensure correct size upfront)']
+  },
+  {
+    id: 'prod-anker-737-powerbank',
+    title: 'Anker 737 Power Bank (PowerCore 24K, 140W Two-Way Fast Charge)',
+    brand: 'Anker',
+    category: 'Accessories',
+    price: 8499,
+    originalPrice: 10999,
+    rating: 4.9,
+    reviewsCount: 3100,
+    image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&auto=format&fit=crop&q=80',
+    description: 'Equipped with Power Delivery 3.1 and bi-directional technology to quickly recharge the portable charger or get a 140W ultra-powerful charge for MacBook Pro.',
+    specs: {
+      'Capacity': '24,000 mAh',
+      'Max Output': '140W Single Port (Charges 16" MBP in 40 mins)',
+      'Display': 'Smart Digital Color Display with battery health & watts',
+      'Ports': '2x USB-C + 1x USB-A'
+    },
+    matchScore: 90,
+    featured: false,
+    inStock: true,
+    pros: ['Informative real-time OLED screen showing wattage and time remaining', 'Charges a laptop at full speed on flights and commutes', 'Recharges itself at 140W in under an hour'],
+    considerations: ['Substantial weight (630 grams)', 'Thick brick profile']
+  },
+  {
+    id: 'prod-apple-watch-s9',
+    title: 'Apple Watch Series 9 GPS 45mm (Midnight Aluminum Case)',
+    brand: 'Apple',
+    category: 'Wearables',
+    price: 41900,
+    originalPrice: 44900,
+    rating: 4.8,
+    reviewsCount: 4200,
+    image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&auto=format&fit=crop&q=80',
+    description: 'S9 SiP chip with new double tap gesture, 2000-nit Always-On Retina display, on-device Siri, and advanced health sensors for heart, ECG, and sleep tracking.',
+    specs: {
+      'Display': 'Always-On Retina OLED (up to 2000 nits)',
+      'Chip': 'S9 SiP with 4-core Neural Engine',
+      'Sensors': 'Electrical heart sensor, Blood Oxygen, Temperature',
+      'Water Resistance': '50 meters swimproof'
+    },
+    matchScore: 93,
+    featured: false,
+    inStock: true,
+    pros: ['Seamless integration with iOS and smart notifications', 'Intuitive Double Tap gesture for one-handed operation', 'Extremely accurate fitness and heart telemetry'],
+    considerations: ['Requires daily overnight or morning charging (18h battery)', 'Only compatible with iPhones']
+  },
+  {
+    id: 'prod-bose-quietcomfort-ultra',
+    title: 'Bose QuietComfort Ultra Wireless Noise Cancelling Headphones',
+    brand: 'Bose',
+    category: 'Audio',
+    price: 34900,
+    originalPrice: 38900,
+    rating: 4.7,
+    reviewsCount: 1900,
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80',
+    description: 'Breakthrough spatialized audio with Bose Immersive Audio, custom acoustic architecture, CustomTune technology, and supreme world-class noise cancellation.',
+    specs: {
+      'Audio': 'Bose Immersive Audio (Spatial Soundstage)',
+      'Battery': 'Up to 24 hours playtime',
+      'Comfort': 'Plush leatherette ear cushions and aluminum arms',
+      'Bluetooth': '5.3 with Snapdragon Sound certification'
+    },
+    matchScore: 94,
+    featured: false,
+    inStock: true,
+    pros: ['Ultra-plush ear cups with gentle clamping force', 'Folding earcups fold flat into a travel pouch', 'Natural Aware transparency mode'],
+    considerations: ['Immersive Audio mode reduces battery life to 18 hours', 'App occasionally requires re-pairing']
+  },
+  {
+    id: 'prod-samsung-t7-shield',
+    title: 'Samsung T7 Shield 2TB Portable SSD (USB 3.2 Gen 2)',
+    brand: 'Samsung',
+    category: 'Accessories',
+    price: 15499,
+    originalPrice: 18999,
+    rating: 4.9,
+    reviewsCount: 3800,
+    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&auto=format&fit=crop&q=80',
+    description: 'Rugged high-speed external solid state drive with up to 1,050 MB/s transfer speeds, IP65 dust and water resistance, and 3-meter drop durability.',
+    specs: {
+      'Read / Write': 'Up to 1,050 MB/s read, 1,000 MB/s write',
+      'Durability': 'IP65 Water & Dust Resistant, 3m drop protection',
+      'Interface': 'USB 3.2 Gen 2 Type-C',
+      'Compatibility': 'Mac, Windows, Android, iPadOS, Gaming Consoles'
+    },
+    matchScore: 91,
+    featured: false,
+    inStock: true,
+    pros: ['Rubberized outer shell resists accidental drops and scuffs', 'Transfers massive 4K video footage in seconds', 'Remains cool under sustained write loads'],
+    considerations: ['Slightly thicker than aluminum Samsung T7', 'Rubber surface attracts desk lint']
+  },
+  {
+    id: 'prod-asus-tuf-a15',
+    title: 'ASUS TUF Gaming A15 (Ryzen 7 7435HS, RTX 4050 6GB, 16GB DDR5, 512GB SSD)',
+    brand: 'ASUS',
+    category: 'Laptops',
+    price: 71990,
+    originalPrice: 84990,
+    rating: 4.7,
+    reviewsCount: 1650,
+    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&auto=format&fit=crop&q=80',
+    description: 'Military-grade gaming laptop armed with NVIDIA GeForce RTX 4050 6GB (140W max TGP), AMD Ryzen 7 7435HS, and a rapid 144Hz FHD IPS display with Adaptive-Sync.',
+    specs: {
+      'Processor': 'AMD Ryzen 7 7435HS (8 cores, 16 threads, up to 4.5GHz)',
+      'Graphics': 'NVIDIA GeForce RTX 4050 6GB GDDR6 (140W TGP)',
+      'Display': '15.6-inch FHD (1920x1080) 144Hz IPS Anti-Glare',
+      'Memory & Storage': '16GB DDR5-4800 RAM + 512GB PCIe 4.0 NVMe SSD',
+      'Durability': 'MIL-STD-810H Military Standard Tested'
+    },
+    matchScore: 97,
+    featured: true,
+    inStock: true,
+    pros: ['Top-tier gaming value under ₹75k with full-power 140W RTX 4050', 'Dual fan cooling with 4 exhaust vents', 'Upgradable dual-channel DDR5 slots'],
+    considerations: ['Power brick is relatively bulky (240W)', 'Webcam is 720p HD standard']
+  },
+  {
+    id: 'prod-soundcore-q20i',
+    title: 'Soundcore by Anker Life Q20i Hybrid Active Noise Cancelling Headphones',
+    brand: 'Anker',
+    category: 'Audio',
+    price: 4499,
+    originalPrice: 5999,
+    rating: 4.6,
+    reviewsCount: 5400,
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80',
+    description: 'Certified Hi-Res Audio over-ear headphones with 40mm oversized dynamic drivers, Hybrid Active Noise Cancellation reducing ambient hum by up to 90%, and 40-hour battery life.',
+    specs: {
+      'Noise Cancelling': 'Hybrid Active Noise Cancellation (Dual internal/external mics)',
+      'Battery Life': '40 Hours with ANC on (60 Hours in normal mode)',
+      'Audio Quality': 'Hi-Res Certified with BassUp dual EQ toggle',
+      'Connectivity': 'Bluetooth 5.0 and 3.5mm Aux Cable'
+    },
+    matchScore: 95,
+    featured: true,
+    inStock: true,
+    pros: ['Unbeatable over-ear ANC comfort under ₹5,000', 'Massive 40-hour ANC playback per charge', 'Includes 3.5mm backup cable for zero latency'],
+    considerations: ['Earcups can get warm in summer commutes', 'No custom multi-point app profile switching']
+  },
+  {
+    id: 'prod-logitech-pebble-combo',
+    title: 'Logitech Pebble 2 Combo (K380s Slim Bluetooth Keyboard + M350s Silent Mouse)',
+    brand: 'Logitech',
+    category: 'Workspace',
+    price: 3695,
+    originalPrice: 4495,
+    rating: 4.8,
+    reviewsCount: 6800,
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80',
+    description: 'Minimalist, portable, and ultra-quiet wireless keyboard and mouse combo. Effortlessly switch between up to 3 devices (laptop, tablet, phone) with Easy-Switch buttons.',
+    specs: {
+      'Compatibility': 'Windows, macOS, iPadOS, ChromeOS, Android',
+      'Battery Life': '36 months for keyboard, 24 months for mouse',
+      'Acoustics': 'SilentTouch technology with 90% reduced click noise',
+      'Weight': 'Keyboard: 415g, Mouse: 76g (featherlight travel)'
+    },
+    matchScore: 96,
+    featured: true,
+    inStock: true,
+    pros: ['The quintessential student college bundle for libraries and lectures', 'Instantly switches between iPad and laptop', 'Silent clicks avoid disturbing study halls'],
+    considerations: ['Round keycaps require brief muscle-memory adaptation', 'No backlight on keyboard']
+  }
+];
+
+export const CATEGORIES = [
+  'Audio',
+  'Workspace',
+  'Laptops',
+  'Displays',
+  'Accessories',
+  'Lifestyle',
+  'Wearables'
+];
+
+export const BRANDS = [
+  'Sony',
+  'Apple',
+  'Keychron',
+  'Logitech',
+  'Dell',
+  'Anker',
+  'Bose',
+  'OnePlus',
+  'ASUS',
+  'Samsung',
+  'Ember'
+];
+
